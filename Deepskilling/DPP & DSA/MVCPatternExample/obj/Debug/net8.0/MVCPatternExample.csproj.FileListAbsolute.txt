@@ -1,0 +1,14 @@
+D:\Cognizant Hands-On\MVCPatternExample\bin\Debug\net8.0\MVCPatternExample.exe
+D:\Cognizant Hands-On\MVCPatternExample\bin\Debug\net8.0\MVCPatternExample.deps.json
+D:\Cognizant Hands-On\MVCPatternExample\bin\Debug\net8.0\MVCPatternExample.runtimeconfig.json
+D:\Cognizant Hands-On\MVCPatternExample\bin\Debug\net8.0\MVCPatternExample.dll
+D:\Cognizant Hands-On\MVCPatternExample\bin\Debug\net8.0\MVCPatternExample.pdb
+D:\Cognizant Hands-On\MVCPatternExample\obj\Debug\net8.0\MVCPatternExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cognizant Hands-On\MVCPatternExample\obj\Debug\net8.0\MVCPatternExample.AssemblyInfoInputs.cache
+D:\Cognizant Hands-On\MVCPatternExample\obj\Debug\net8.0\MVCPatternExample.AssemblyInfo.cs
+D:\Cognizant Hands-On\MVCPatternExample\obj\Debug\net8.0\MVCPatternExample.csproj.CoreCompileInputs.cache
+D:\Cognizant Hands-On\MVCPatternExample\obj\Debug\net8.0\MVCPatternExample.dll
+D:\Cognizant Hands-On\MVCPatternExample\obj\Debug\net8.0\refint\MVCPatternExample.dll
+D:\Cognizant Hands-On\MVCPatternExample\obj\Debug\net8.0\MVCPatternExample.pdb
+D:\Cognizant Hands-On\MVCPatternExample\obj\Debug\net8.0\MVCPatternExample.genruntimeconfig.cache
+D:\Cognizant Hands-On\MVCPatternExample\obj\Debug\net8.0\ref\MVCPatternExample.dll

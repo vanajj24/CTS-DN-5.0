@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservice JWT Authentication & Authorization Playground</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-key logo-icon"></i>
+                <div class="brand-text">
+                    <h1>AuthMicroservice</h1>
+                    <span>JWT & Auth Playground</span>
+                </div>
+            </div>
+            <nav class="question-list">
+                <h3>HANDS-ON QUESTIONS</h3>
+                <button class="nav-btn active" data-q="1">
+                    <span class="q-num">Q1</span> JWT Authentication
+                </button>
+                <button class="nav-btn" data-q="2">
+                    <span class="q-num">Q2</span> Secure Endpoints
+                </button>
+                <button class="nav-btn" data-q="3">
+                    <span class="q-num">Q3</span> Role Authorization
+                </button>
+                <button class="nav-btn" data-q="4">
+                    <span class="q-num">Q4</span> Expiry & Failures
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Status: Localhost Active</p>
+                <span class="port-tag">Port 5001</span>
+            </div>
+        </aside>
+
+        <!-- Main Panel -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-title">
+                    <span id="current-category">Question 1: Implement JWT Authentication</span>
+                    <h2 id="q-title">Scenario: Building secure logins in ASP.NET Core Web API</h2>
+                </div>
+            </header>
+
+            <!-- Dashboard Layout Grid -->
+            <div class="dashboard-grid">
+                
+                <!-- Left: C# Code Viewer -->
+                <section class="card code-section">
+                    <div class="card-header">
+                        <div class="tab active"><i class="fa-solid fa-code"></i> C# Source Code</div>
+                        <div class="header-badges">
+                            <span class="badge" id="csharp-file-name">Program.cs</span>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <pre><code id="code-display">Initializing source...</code></pre>
+                    </div>
+                    <div class="q-meta-desc" id="q-explanation">
+                        Loading question scenario...
+                    </div>
+                </section>
+
+                <!-- Top Right: JWT Generator & Client Login Form -->
+                <section class="card client-section">
+                    <div class="card-header">
+                        <div class="tab active"><i class="fa-solid fa-user-shield"></i> Step 1: User Login & JWT Request</div>
+                        <div class="header-badges">
+                            <span class="badge state-tag" id="client-auth-state">Unauthenticated</span>
+                        </div>
+                    </div>
+                    <div class="client-body">
+                        <form class="login-form" id="login-form" onsubmit="return false;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" id="username" value="alice_admin" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" value="password" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="role-select">Select User Role</label>
+                                    <select id="role-select">
+                                        <option value="Admin">Admin (Full access)</option>
+                                        <option value="User" selected>User (Standard client access)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group action-group">
+                                    <label>&nbsp;</label>
+                                    <button class="action-btn submit-btn" id="btn-login">
+                                        <i class="fa-solid fa-right-to-bracket"></i> Generate JWT Token
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Middle Right: JWT Inspector & Decoder -->
+                <section class="card jwt-section">
+                    <div class="card-header">
+                        <div class="tab active"><i class="fa-solid fa-ticket"></i> Step 2: Encoded JWT Token vs Decoded Claims</div>
+                        <div class="header-badges">
+                            <button class="text-link-btn" id="btn-simulate-expire">Simulate Token Expiry</button>
+                        </div>
+                    </div>
+                    <div class="jwt-grid">
+                        <div class="jwt-encoded-box">
+                            <h4>Encoded String (JWT Structure)</h4>
+                            <div class="jwt-token-string" id="encoded-token-display">
+                                No token generated yet. Click "Generate JWT Token" above.
+                            </div>
+                        </div>
+                        <div class="jwt-decoded-box">
+                            <h4>Decoded Claims JSON</h4>
+                            <pre class="json-display" id="decoded-claims-display">{}</pre>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bottom Panel: API client console (Postman Style) -->
+                <section class="card api-section">
+                    <div class="card-header">
+                        <div class="tab active"><i class="fa-solid fa-terminal"></i> Step 3: Invoke Web API Microservice Endpoints</div>
+                    </div>
+                    <div class="api-console-body">
+                        <div class="api-control-bar">
+                            <span class="http-method">GET</span>
+                            <select class="api-url-select" id="api-endpoint-select">
+                                <option value="secure">/api/Secure/data (Requires Authorization)</option>
+                                <option value="admin">/api/Admin/dashboard (Requires Role = "Admin")</option>
+                            </select>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="include-auth-header" checked>
+                                <label for="include-auth-header">Include Bearer Token</label>
+                            </div>
+                            <button class="action-btn send-btn" id="btn-send-request">
+                                Send Request <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="api-response-area">
+                            <div class="response-status-bar">
+                                <span class="status-label">Response Status:</span>
+                                <span class="status-badge" id="response-status-code">-</span>
+                            </div>
+                            <div class="response-headers-box">
+                                <h5>Headers</h5>
+                                <pre id="response-headers-display">None</pre>
+                            </div>
+                            <div class="response-body-box">
+                                <h5>Response Body</h5>
+                                <pre id="response-body-display">No requests executed yet.</pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script source -->
+    <script src="app.js"></script>
+</body>
+</html>

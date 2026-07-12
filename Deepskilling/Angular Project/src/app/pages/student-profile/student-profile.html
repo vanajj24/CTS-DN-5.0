@@ -1,0 +1,46 @@
+<div class="profile-container animate-fade-in">
+  <div class="profile-header glass-panel">
+    <div class="avatar">
+      <div class="avatar-initial">{{ studentInfo.name.charAt(0) }}</div>
+    </div>
+    <div class="student-details">
+      <h2>{{ studentInfo.name }}</h2>
+      <p class="subtitle">{{ studentInfo.major }}</p>
+      <div class="meta-info">
+        <span class="badge">{{ studentInfo.email }}</span>
+        <span class="badge highlight">GPA: {{ studentInfo.gpa }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="enrollments-section glass-panel">
+    <h3>My Enrollments</h3>
+    
+    <div *ngIf="isLoading" class="loading-state">
+      <div class="spinner"></div>
+      <p>Loading your courses...</p>
+    </div>
+
+    <div *ngIf="!isLoading && enrollments.length === 0" class="empty-state">
+      <div class="empty-icon">📚</div>
+      <p>You have not enrolled in any courses yet.</p>
+      <a routerLink="/courses" class="btn-primary">Browse Courses</a>
+    </div>
+
+    <div *ngIf="!isLoading && enrollments.length > 0" class="enrollments-grid">
+      <div class="enrollment-card" *ngFor="let entry of enrollments">
+        <div class="card-top">
+          <span class="semester-badge">{{ entry.preferredSemester }} Sem</span>
+          <h4>Course ID: {{ entry.courseId }}</h4>
+        </div>
+        <div class="card-body">
+          <p><strong>Enrolled as:</strong> {{ entry.studentName }}</p>
+          <p><strong>Contact:</strong> {{ entry.studentEmail }}</p>
+        </div>
+        <div class="card-footer" *ngIf="entry.additionalCourses?.length">
+          <span class="additional-count">+{{ entry.additionalCourses.length }} additional courses</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

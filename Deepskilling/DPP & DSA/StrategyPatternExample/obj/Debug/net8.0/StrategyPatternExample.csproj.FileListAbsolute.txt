@@ -1,0 +1,14 @@
+D:\Cognizant Hands-On\StrategyPatternExample\bin\Debug\net8.0\StrategyPatternExample.exe
+D:\Cognizant Hands-On\StrategyPatternExample\bin\Debug\net8.0\StrategyPatternExample.deps.json
+D:\Cognizant Hands-On\StrategyPatternExample\bin\Debug\net8.0\StrategyPatternExample.runtimeconfig.json
+D:\Cognizant Hands-On\StrategyPatternExample\bin\Debug\net8.0\StrategyPatternExample.dll
+D:\Cognizant Hands-On\StrategyPatternExample\bin\Debug\net8.0\StrategyPatternExample.pdb
+D:\Cognizant Hands-On\StrategyPatternExample\obj\Debug\net8.0\StrategyPatternExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cognizant Hands-On\StrategyPatternExample\obj\Debug\net8.0\StrategyPatternExample.AssemblyInfoInputs.cache
+D:\Cognizant Hands-On\StrategyPatternExample\obj\Debug\net8.0\StrategyPatternExample.AssemblyInfo.cs
+D:\Cognizant Hands-On\StrategyPatternExample\obj\Debug\net8.0\StrategyPatternExample.csproj.CoreCompileInputs.cache
+D:\Cognizant Hands-On\StrategyPatternExample\obj\Debug\net8.0\StrategyPatternExample.dll
+D:\Cognizant Hands-On\StrategyPatternExample\obj\Debug\net8.0\refint\StrategyPatternExample.dll
+D:\Cognizant Hands-On\StrategyPatternExample\obj\Debug\net8.0\StrategyPatternExample.pdb
+D:\Cognizant Hands-On\StrategyPatternExample\obj\Debug\net8.0\StrategyPatternExample.genruntimeconfig.cache
+D:\Cognizant Hands-On\StrategyPatternExample\obj\Debug\net8.0\ref\StrategyPatternExample.dll

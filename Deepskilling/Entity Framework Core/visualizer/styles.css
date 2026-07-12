@@ -1,0 +1,643 @@
+/* CSS Variables: A Clean, Modern Developer Theme (Supabase & VS Code flat aesthetic) */
+:root {
+    --bg-main: #0c0f16;
+    --bg-surface: #131722;
+    --bg-header: #191f2d;
+    --border-color: #262f41;
+    --border-focus: #3b82f6;
+    
+    /* Syntax & Accent Colors */
+    --primary: #38bdf8;          /* Light Blue */
+    --accent: #a78bfa;           /* Muted Violet */
+    --success: #34d399;          /* Emerald Green */
+    --warning: #fbbf24;          /* Warm Amber */
+    --error: #f87171;            /* Soft Red */
+    
+    /* State Tracking Colors (Subtle & Natural) */
+    --state-detached: #64748b;
+    --state-added: #10b981;
+    --state-unchanged: #3b82f6;
+    --state-modified: #f59e0b;
+    --state-deleted: #ef4444;
+    
+    /* Text Colors */
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    
+    /* Fonts */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-title: 'Outfit', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+    
+    --transition-fast: 0.15s ease;
+}
+
+/* Reset and Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+/* Sidebar: Flat, High-Density Developer Navigation */
+.sidebar {
+    width: 260px;
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.brand {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.logo-icon {
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.brand-text h1 {
+    font-family: var(--font-title);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-primary);
+}
+
+.brand-text span {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.lab-list {
+    flex: 1;
+    padding: 12px;
+    overflow-y: auto;
+}
+
+.lab-list h3 {
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 0.8px;
+    margin: 18px 0 6px 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.lab-btn {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 2px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    border-radius: 6px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-fast);
+}
+
+.lab-btn:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.lab-btn.active {
+    color: var(--text-primary);
+    background-color: rgba(56, 189, 248, 0.08);
+    border-left: 3px solid var(--primary);
+    border-radius: 0 6px 6px 0;
+}
+
+.lab-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--primary);
+}
+
+/* Main Dashboard Workspace */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-main);
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Header */
+.main-header {
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-surface);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.header-title h2 {
+    font-family: var(--font-title);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 2px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Standard Control Buttons: Solid, Minimalist */
+.control-btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-fast);
+}
+
+.control-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-muted);
+}
+
+.run-btn {
+    background-color: var(--primary);
+    color: #0b0f19;
+    border-color: var(--primary);
+}
+
+.run-btn:hover {
+    background-color: #7dd3fc;
+    border-color: #7dd3fc;
+}
+
+.step-btn {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.step-btn:hover {
+    background-color: rgba(167, 139, 250, 0.08);
+}
+
+/* Layout Grid: Compact and Professional */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-rows: minmax(360px, 1fr) minmax(280px, 1.1fr);
+    gap: 16px;
+    padding: 16px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.badge {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.06);
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--text-secondary);
+}
+
+/* C# Editor Section */
+.code-section {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.code-container {
+    flex: 1;
+    overflow: auto;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+pre {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.code-line-span {
+    display: block;
+    padding: 2px 6px;
+    border-left: 2px solid transparent;
+}
+
+.code-line-span.highlighted {
+    background-color: rgba(56, 189, 248, 0.08);
+    border-left-color: var(--primary);
+    color: #ffffff;
+}
+
+.lab-meta-desc {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border-color);
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* EF Core Change Tracker Console */
+.tracker-section {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.tracker-body {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tracker-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.state-dot {
+    font-size: 11px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-secondary);
+}
+
+.state-dot::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.state-dot.detached::before { background-color: var(--state-detached); }
+.state-dot.added::before { background-color: var(--state-added); }
+.state-dot.unchanged::before { background-color: var(--state-unchanged); }
+.state-dot.modified::before { background-color: var(--state-modified); }
+.state-dot.deleted::before { background-color: var(--state-deleted); }
+
+.tracked-entities-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 100%;
+    color: var(--text-muted);
+}
+
+.empty-state i {
+    font-size: 24px;
+    opacity: 0.5;
+}
+
+.empty-state p {
+    font-size: 12px;
+}
+
+/* Tracker Card Element: Clean, Rounded Board, No Artificial Glows */
+.entity-card {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--bg-main);
+    overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.entity-card-header {
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(255, 255, 255, 0.01);
+}
+
+.entity-title-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.entity-type {
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.entity-key {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--text-muted);
+}
+
+.entity-state-badge {
+    font-size: 9.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+    border: 1px solid transparent;
+}
+
+/* Specific entity tracker state decorations */
+.entity-card.state-added { border-color: rgba(16, 185, 129, 0.3); }
+.entity-card.state-added .entity-state-badge { background-color: rgba(16, 185, 129, 0.1); color: #34d399; border-color: rgba(16, 185, 129, 0.2); }
+
+.entity-card.state-unchanged { border-color: rgba(59, 130, 246, 0.3); }
+.entity-card.state-unchanged .entity-state-badge { background-color: rgba(59, 130, 246, 0.1); color: #60a5fa; border-color: rgba(59, 130, 246, 0.2); }
+
+.entity-card.state-modified { border-color: rgba(245, 158, 11, 0.3); }
+.entity-card.state-modified .entity-state-badge { background-color: rgba(245, 158, 11, 0.1); color: #fbbf24; border-color: rgba(245, 158, 11, 0.2); }
+
+.entity-card.state-deleted { border-color: rgba(239, 68, 109, 0.3); }
+.entity-card.state-deleted .entity-state-badge { background-color: rgba(239, 68, 109, 0.1); color: #f87171; border-color: rgba(239, 68, 109, 0.2); }
+
+.entity-card-body {
+    padding: 8px 12px;
+    font-size: 11.5px;
+}
+
+.prop-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+    font-family: var(--font-mono);
+}
+
+.prop-name {
+    color: var(--text-secondary);
+}
+
+.prop-value {
+    color: var(--text-primary);
+}
+
+.prop-value.changed {
+    color: var(--warning);
+    font-weight: 500;
+}
+
+/* SQL Console Output: Realistic logs */
+.sql-section {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.sql-console-body {
+    flex: 1;
+    background-color: #080a0f;
+    padding: 12px 16px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    overflow-y: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+.sql-console-logs {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sql-log-line {
+    line-height: 1.4;
+    white-space: pre-wrap;
+}
+
+.sql-time-stamp {
+    color: var(--text-muted);
+    margin-right: 6px;
+}
+
+.sql-query-type {
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.sql-query-type.info { color: #94a3b8; }
+.sql-query-type.insert { color: var(--success); }
+.sql-query-type.update { color: var(--warning); }
+.sql-query-type.delete { color: var(--error); }
+.sql-query-type.select { color: var(--primary); }
+
+.sql-query-text {
+    color: #cbd5e1;
+}
+
+.sql-placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Live SQL Tables Viewer: High-Density grid, PgAdmin Style */
+.db-section {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.db-tabs {
+    display: flex;
+    gap: 2px;
+}
+
+.db-tab-btn {
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.db-tab-btn:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.db-tab-btn.active {
+    color: var(--primary);
+    background-color: rgba(56, 189, 248, 0.1);
+}
+
+.db-table-container {
+    flex: 1;
+    overflow: auto;
+    padding: 0;
+}
+
+.db-table-view {
+    display: none;
+    height: 100%;
+}
+
+.db-table-view.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    text-align: left;
+}
+
+th {
+    padding: 8px 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background-color: #171c28;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+td {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    font-family: var(--font-mono);
+    color: #cbd5e1;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.015);
+}
+
+/* Animation Highlights for Row mutations: Subtle row flashes */
+tr.highlight-row {
+    animation: flashRowSubtle 1.2s ease-out;
+}
+
+@keyframes flashRowSubtle {
+    0% { background-color: rgba(56, 189, 248, 0.15); }
+    100% { background-color: transparent; }
+}
+
+tr.row-deleted {
+    background-color: rgba(239, 68, 68, 0.04);
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+tr.row-added {
+    animation: flashRowAddSubtle 1.2s ease-out;
+}
+
+@keyframes flashRowAddSubtle {
+    0% { background-color: rgba(16, 185, 129, 0.15); }
+    100% { background-color: transparent; }
+}

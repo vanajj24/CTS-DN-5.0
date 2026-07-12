@@ -1,0 +1,14 @@
+D:\Cognizant Hands-On\ProxyPatternExample\obj\Debug\net8.0\ProxyPatternExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cognizant Hands-On\ProxyPatternExample\obj\Debug\net8.0\ProxyPatternExample.AssemblyInfoInputs.cache
+D:\Cognizant Hands-On\ProxyPatternExample\obj\Debug\net8.0\ProxyPatternExample.AssemblyInfo.cs
+D:\Cognizant Hands-On\ProxyPatternExample\obj\Debug\net8.0\ProxyPatternExample.csproj.CoreCompileInputs.cache
+D:\Cognizant Hands-On\ProxyPatternExample\bin\Debug\net8.0\ProxyPatternExample.exe
+D:\Cognizant Hands-On\ProxyPatternExample\bin\Debug\net8.0\ProxyPatternExample.deps.json
+D:\Cognizant Hands-On\ProxyPatternExample\bin\Debug\net8.0\ProxyPatternExample.runtimeconfig.json
+D:\Cognizant Hands-On\ProxyPatternExample\bin\Debug\net8.0\ProxyPatternExample.dll
+D:\Cognizant Hands-On\ProxyPatternExample\bin\Debug\net8.0\ProxyPatternExample.pdb
+D:\Cognizant Hands-On\ProxyPatternExample\obj\Debug\net8.0\ProxyPatternExample.dll
+D:\Cognizant Hands-On\ProxyPatternExample\obj\Debug\net8.0\refint\ProxyPatternExample.dll
+D:\Cognizant Hands-On\ProxyPatternExample\obj\Debug\net8.0\ProxyPatternExample.pdb
+D:\Cognizant Hands-On\ProxyPatternExample\obj\Debug\net8.0\ProxyPatternExample.genruntimeconfig.cache
+D:\Cognizant Hands-On\ProxyPatternExample\obj\Debug\net8.0\ref\ProxyPatternExample.dll

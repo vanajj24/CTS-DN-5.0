@@ -1,0 +1,14 @@
+D:\Cognizant Hands-On\CommandPatternExample\bin\Debug\net8.0\CommandPatternExample.exe
+D:\Cognizant Hands-On\CommandPatternExample\bin\Debug\net8.0\CommandPatternExample.deps.json
+D:\Cognizant Hands-On\CommandPatternExample\bin\Debug\net8.0\CommandPatternExample.runtimeconfig.json
+D:\Cognizant Hands-On\CommandPatternExample\bin\Debug\net8.0\CommandPatternExample.dll
+D:\Cognizant Hands-On\CommandPatternExample\bin\Debug\net8.0\CommandPatternExample.pdb
+D:\Cognizant Hands-On\CommandPatternExample\obj\Debug\net8.0\CommandPatternExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cognizant Hands-On\CommandPatternExample\obj\Debug\net8.0\CommandPatternExample.AssemblyInfoInputs.cache
+D:\Cognizant Hands-On\CommandPatternExample\obj\Debug\net8.0\CommandPatternExample.AssemblyInfo.cs
+D:\Cognizant Hands-On\CommandPatternExample\obj\Debug\net8.0\CommandPatternExample.csproj.CoreCompileInputs.cache
+D:\Cognizant Hands-On\CommandPatternExample\obj\Debug\net8.0\CommandPatternExample.dll
+D:\Cognizant Hands-On\CommandPatternExample\obj\Debug\net8.0\refint\CommandPatternExample.dll
+D:\Cognizant Hands-On\CommandPatternExample\obj\Debug\net8.0\CommandPatternExample.pdb
+D:\Cognizant Hands-On\CommandPatternExample\obj\Debug\net8.0\CommandPatternExample.genruntimeconfig.cache
+D:\Cognizant Hands-On\CommandPatternExample\obj\Debug\net8.0\ref\CommandPatternExample.dll

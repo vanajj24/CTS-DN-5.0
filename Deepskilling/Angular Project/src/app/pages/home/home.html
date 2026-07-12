@@ -1,0 +1,31 @@
+<div class="home-container animate-fade-in">
+  <div class="hero-section">
+    <h1>{{ portalName }}</h1>
+    <p>Manage your courses, view your profile, and enroll in new programs here.</p>
+    
+    <div class="search-box">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses...">
+      <p class="search-feedback" *ngIf="searchTerm">Searching for: <strong>{{ searchTerm }}</strong></p>
+    </div>
+
+    <div class="action-row">
+      <button [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+      <p class="message" *ngIf="message">{{ message }}</p>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <h3>Courses Available</h3>
+      <span class="stat-value">12</span>
+    </div>
+    <div class="stat-card">
+      <h3>Enrolled</h3>
+      <span class="stat-value">3</span>
+    </div>
+    <div class="stat-card">
+      <h3>GPA</h3>
+      <span class="stat-value">3.8</span>
+    </div>
+  </div>
+</div>

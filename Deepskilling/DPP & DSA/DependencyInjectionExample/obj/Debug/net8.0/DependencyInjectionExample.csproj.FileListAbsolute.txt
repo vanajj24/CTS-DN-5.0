@@ -1,0 +1,14 @@
+d:\Cognizant Hands-On\DependencyInjectionExample\bin\Debug\net8.0\DependencyInjectionExample.exe
+d:\Cognizant Hands-On\DependencyInjectionExample\bin\Debug\net8.0\DependencyInjectionExample.deps.json
+d:\Cognizant Hands-On\DependencyInjectionExample\bin\Debug\net8.0\DependencyInjectionExample.runtimeconfig.json
+d:\Cognizant Hands-On\DependencyInjectionExample\bin\Debug\net8.0\DependencyInjectionExample.dll
+d:\Cognizant Hands-On\DependencyInjectionExample\bin\Debug\net8.0\DependencyInjectionExample.pdb
+d:\Cognizant Hands-On\DependencyInjectionExample\obj\Debug\net8.0\DependencyInjectionExample.GeneratedMSBuildEditorConfig.editorconfig
+d:\Cognizant Hands-On\DependencyInjectionExample\obj\Debug\net8.0\DependencyInjectionExample.AssemblyInfoInputs.cache
+d:\Cognizant Hands-On\DependencyInjectionExample\obj\Debug\net8.0\DependencyInjectionExample.AssemblyInfo.cs
+d:\Cognizant Hands-On\DependencyInjectionExample\obj\Debug\net8.0\DependencyInjectionExample.csproj.CoreCompileInputs.cache
+d:\Cognizant Hands-On\DependencyInjectionExample\obj\Debug\net8.0\DependencyInjectionExample.dll
+d:\Cognizant Hands-On\DependencyInjectionExample\obj\Debug\net8.0\refint\DependencyInjectionExample.dll
+d:\Cognizant Hands-On\DependencyInjectionExample\obj\Debug\net8.0\DependencyInjectionExample.pdb
+d:\Cognizant Hands-On\DependencyInjectionExample\obj\Debug\net8.0\DependencyInjectionExample.genruntimeconfig.cache
+d:\Cognizant Hands-On\DependencyInjectionExample\obj\Debug\net8.0\ref\DependencyInjectionExample.dll

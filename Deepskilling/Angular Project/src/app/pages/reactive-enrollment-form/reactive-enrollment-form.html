@@ -1,0 +1,65 @@
+<div class="form-container animate-fade-in">
+  <h2>Enrollment Request (Reactive)</h2>
+  
+  <div *ngIf="submitted" class="success-message">
+    <p>Reactive Enrollment request submitted successfully!</p>
+    <button (click)="resetForm()">Submit Another</button>
+  </div>
+
+  <form [formGroup]="enrollForm" (ngSubmit)="onSubmit()" *ngIf="!submitted" class="enroll-form">
+    
+    <div class="form-group">
+      <label for="studentName">Student Name</label>
+      <input type="text" id="studentName" formControlName="studentName">
+      <span class="error-message" *ngIf="enrollForm.get('studentName')?.touched && enrollForm.get('studentName')?.errors?.['required']">Name is required</span>
+      <span class="error-message" *ngIf="enrollForm.get('studentName')?.touched && enrollForm.get('studentName')?.errors?.['minlength']">Name must be at least 3 characters</span>
+    </div>
+
+    <div class="form-group">
+      <label for="studentEmail">Email</label>
+      <input type="email" id="studentEmail" formControlName="studentEmail">
+      <span class="error-message" *ngIf="enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['required']">Email is required</span>
+      <span class="error-message" *ngIf="enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['email']">Must be a valid email</span>
+      <span class="error-message" *ngIf="enrollForm.get('studentEmail')?.touched && enrollForm.get('studentEmail')?.errors?.['emailTaken']">Email is already taken</span>
+      <span class="loading-message" *ngIf="enrollForm.get('studentEmail')?.status === 'PENDING'">Checking email...</span>
+    </div>
+
+    <div class="form-group">
+      <label for="courseId">Course Code/ID</label>
+      <input type="text" id="courseId" formControlName="courseId">
+      <span class="error-message" *ngIf="enrollForm.get('courseId')?.touched && enrollForm.get('courseId')?.errors?.['required']">Course ID is required</span>
+      <span class="error-message" *ngIf="enrollForm.get('courseId')?.touched && enrollForm.get('courseId')?.errors?.['noCourseCode']">Course code starting with XX is not allowed.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="preferredSemester">Preferred Semester</label>
+      <select id="preferredSemester" formControlName="preferredSemester">
+        <option value="Odd">Odd Semester</option>
+        <option value="Even">Even Semester</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Additional Courses (FormArray)</label>
+      <div formArrayName="additionalCourses">
+        <div *ngFor="let ctrl of additionalCourses.controls; let i=index" class="array-item">
+          <input [formControlName]="i" placeholder="Course Code">
+          <button type="button" class="btn-secondary remove-btn" (click)="removeCourse(i)">Remove</button>
+        </div>
+      </div>
+      <button type="button" class="btn-secondary" (click)="addCourse()">+ Add Another Course</button>
+    </div>
+
+    <div class="form-group checkbox-group">
+      <label>
+        <input type="checkbox" formControlName="agreeToTerms">
+        I agree to the terms and conditions
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn-secondary" (click)="resetForm()">Reset</button>
+      <button type="submit" [disabled]="enrollForm.invalid || enrollForm.pending">Submit Request</button>
+    </div>
+  </form>
+</div>

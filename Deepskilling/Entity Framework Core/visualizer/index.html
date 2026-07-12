@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EF Core 8.0 Real-Time Save Visualizer & Lab Simulator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-layer-group logo-icon"></i>
+                <div class="brand-text">
+                    <h1>EF Core 8.0</h1>
+                    <span>Lab Interactive Suite</span>
+                </div>
+            </div>
+            <nav class="lab-list">
+                <h3>CORE ARCHITECTURE</h3>
+                <button class="lab-btn active" data-lab="1">
+                    <span class="lab-num">01</span> What is ORM?
+                </button>
+                <button class="lab-btn" data-lab="2">
+                    <span class="lab-num">02</span> DB Context Setup
+                </button>
+                <button class="lab-btn" data-lab="3">
+                    <span class="lab-num">03</span> CLI & Migrations
+                </button>
+
+                <h3>DATA PERSISTENCE</h3>
+                <button class="lab-btn" data-lab="4">
+                    <span class="lab-num">04</span> Inserting Data
+                </button>
+                <button class="lab-btn" data-lab="5">
+                    <span class="lab-num">05</span> Retrieving Data
+                </button>
+                <button class="lab-btn" data-lab="6">
+                    <span class="lab-num">06</span> Update & Delete
+                </button>
+                <button class="lab-btn" data-lab="7">
+                    <span class="lab-num">07</span> LINQ Queries
+                </button>
+
+                <h3>RELATIONS & SCHEMAS</h3>
+                <button class="lab-btn" data-lab="8">
+                    <span class="lab-num">08</span> Schema Changes
+                </button>
+                <button class="lab-btn" data-lab="9">
+                    <span class="lab-num">09</span> Data Seeding
+                </button>
+                <button class="lab-btn" data-lab="10">
+                    <span class="lab-num">10</span> Loading Strategies
+                </button>
+                <button class="lab-btn" data-lab="11">
+                    <span class="lab-num">11</span> Relationships (1:1 / M:N)
+                </button>
+
+                <h3>ADVANCED TOPICS</h3>
+                <button class="lab-btn" data-lab="12">
+                    <span class="lab-num">12</span> Circular References
+                </button>
+                <button class="lab-btn" data-lab="13">
+                    <span class="lab-num">13</span> Query Caching
+                </button>
+                <button class="lab-btn" data-lab="14">
+                    <span class="lab-num">14</span> Bulk Operations
+                </button>
+                <button class="lab-btn" data-lab="15">
+                    <span class="lab-num">15</span> Concurrency RowVersion
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main Panel -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-title">
+                    <span id="current-category">Lab 1: Understanding ORM</span>
+                    <h2 id="lab-title">Scenario: Retail Inventory Management</h2>
+                </div>
+                <div class="header-actions">
+                    <button class="control-btn run-btn" id="btn-run-all">
+                        <i class="fa-solid fa-play"></i> Run Code
+                    </button>
+                    <button class="control-btn step-btn" id="btn-step">
+                        <i class="fa-solid fa-forward-step"></i> Step Line
+                    </button>
+                    <button class="control-btn reset-btn" id="btn-reset">
+                        <i class="fa-solid fa-rotate-left"></i> Reset Lab
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Layout Grid -->
+            <div class="dashboard-grid">
+                
+                <!-- Left: C# Code Viewer -->
+                <section class="card code-section">
+                    <div class="card-header">
+                        <div class="tab active"><i class="fa-solid fa-code"></i> C# Source Code</div>
+                        <div class="header-badges">
+                            <span class="badge" id="csharp-file-name">Program.cs</span>
+                        </div>
+                    </div>
+                    <div class="code-container">
+                        <pre><code id="code-display">Initializing Lab...</code></pre>
+                    </div>
+                    <div class="lab-meta-desc" id="lab-explanation">
+                        Lab description loading...
+                    </div>
+                </section>
+
+                <!-- Middle: EF Core Change Tracker Console -->
+                <section class="card tracker-section">
+                    <div class="card-header">
+                        <div class="tab active"><i class="fa-solid fa-microchip"></i> EF Core Change Tracker (Real-Time State)</div>
+                        <div class="header-badges">
+                            <span class="badge tracking-count" id="active-tracked-entities">0 Tracked</span>
+                        </div>
+                    </div>
+                    <div class="tracker-body">
+                        <div class="tracker-legend">
+                            <span class="state-dot detached">Detached</span>
+                            <span class="state-dot added">Added</span>
+                            <span class="state-dot unchanged">Unchanged</span>
+                            <span class="state-dot modified">Modified</span>
+                            <span class="state-dot deleted">Deleted</span>
+                        </div>
+                        <div class="tracked-entities-container" id="tracker-list">
+                            <div class="empty-state">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <p>Change tracker is currently empty. Run code to track objects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bottom Left: Real-Time Generated SQL -->
+                <section class="card sql-section">
+                    <div class="card-header">
+                        <div class="tab active"><i class="fa-solid fa-database"></i> SQL Server Logging (Console.WriteLine Output)</div>
+                        <div class="header-badges">
+                            <span class="badge sql-speed" id="sql-time">0 ms</span>
+                        </div>
+                    </div>
+                    <div class="sql-console-body">
+                        <div class="sql-console-logs" id="sql-console">
+                            <div class="sql-placeholder">// SQL output will log in real time as operations run...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bottom Right: Live Database View -->
+                <section class="card db-section">
+                    <div class="card-header">
+                        <div class="tab active"><i class="fa-solid fa-server"></i> Live SQL Database Tables</div>
+                        <div class="db-tabs">
+                            <button class="db-tab-btn active" data-table="products">Products</button>
+                            <button class="db-tab-btn" data-table="categories">Categories</button>
+                            <button class="db-tab-btn" data-table="details">ProductDetails</button>
+                            <button class="db-tab-btn" data-table="tags">Tags</button>
+                        </div>
+                    </div>
+                    <div class="db-table-container">
+                        <!-- Products Table -->
+                        <div class="db-table-view active" id="table-products">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>CategoryId</th>
+                                        <th>StockQuantity</th>
+                                        <th>RowVersion (TS)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="db-products-rows">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Categories Table -->
+                        <div class="db-table-view" id="table-categories">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="db-categories-rows">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Product Details Table -->
+                        <div class="db-table-view" id="table-details">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>DetailId</th>
+                                        <th>ProductId</th>
+                                        <th>WarrantyInfo</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="db-details-rows">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Tags Table -->
+                        <div class="db-table-view" id="table-tags">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Associated Product IDs</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="db-tags-rows">
+                                    <!-- Dynamic rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Script source -->
+    <script src="app.js"></script>
+</body>
+</html>

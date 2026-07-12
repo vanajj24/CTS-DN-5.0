@@ -1,0 +1,14 @@
+D:\Cognizant Hands-On\AdapterPatternExample\bin\Debug\net8.0\AdapterPatternExample.exe
+D:\Cognizant Hands-On\AdapterPatternExample\bin\Debug\net8.0\AdapterPatternExample.deps.json
+D:\Cognizant Hands-On\AdapterPatternExample\bin\Debug\net8.0\AdapterPatternExample.runtimeconfig.json
+D:\Cognizant Hands-On\AdapterPatternExample\bin\Debug\net8.0\AdapterPatternExample.dll
+D:\Cognizant Hands-On\AdapterPatternExample\bin\Debug\net8.0\AdapterPatternExample.pdb
+D:\Cognizant Hands-On\AdapterPatternExample\obj\Debug\net8.0\AdapterPatternExample.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cognizant Hands-On\AdapterPatternExample\obj\Debug\net8.0\AdapterPatternExample.AssemblyInfoInputs.cache
+D:\Cognizant Hands-On\AdapterPatternExample\obj\Debug\net8.0\AdapterPatternExample.AssemblyInfo.cs
+D:\Cognizant Hands-On\AdapterPatternExample\obj\Debug\net8.0\AdapterPatternExample.csproj.CoreCompileInputs.cache
+D:\Cognizant Hands-On\AdapterPatternExample\obj\Debug\net8.0\AdapterPatternExample.dll
+D:\Cognizant Hands-On\AdapterPatternExample\obj\Debug\net8.0\refint\AdapterPatternExample.dll
+D:\Cognizant Hands-On\AdapterPatternExample\obj\Debug\net8.0\AdapterPatternExample.pdb
+D:\Cognizant Hands-On\AdapterPatternExample\obj\Debug\net8.0\AdapterPatternExample.genruntimeconfig.cache
+D:\Cognizant Hands-On\AdapterPatternExample\obj\Debug\net8.0\ref\AdapterPatternExample.dll

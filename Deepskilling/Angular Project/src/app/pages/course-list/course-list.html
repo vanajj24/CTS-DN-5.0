@@ -1,0 +1,30 @@
+<div class="course-list-container animate-fade-in">
+  <h2>Available Courses</h2>
+
+  <div *ngIf="isLoading$ | async; else courseGrid" class="loading-state">
+    <div class="spinner"></div>
+    <p>Loading courses...</p>
+  </div>
+
+  <ng-template #courseGrid>
+    <div *ngIf="(courses$ | async) as courses">
+      <div *ngIf="courses.length > 0; else noCourses" class="grid">
+        <app-course-card 
+          *ngFor="let c of courses; trackBy: trackByCourseId" 
+          [course]="c" 
+          (enrollRequested)="onEnroll($event)">
+        </app-course-card>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #noCourses>
+    <div class="empty-state">
+      <p>No courses available at the moment.</p>
+    </div>
+  </ng-template>
+
+  <div class="selection-feedback" *ngIf="selectedCourseId">
+    <p>Selected course ID: <strong>{{ selectedCourseId }}</strong></p>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+{
+  "courses": [
+    { "id": 1, "name": "Advanced Angular", "code": "CS301", "credits": 4, "gradeStatus": "passed" },
+    { "id": 2, "name": "RxJS Masterclass", "code": "CS302", "credits": 3, "gradeStatus": "pending" },
+    { "id": 3, "name": "NgRx State Management", "code": "CS303", "credits": 4, "gradeStatus": "failed" },
+    { "id": 4, "name": "Web Performance", "code": "CS304", "credits": 2, "gradeStatus": "passed" },
+    { "id": 5, "name": "UI/UX Design", "code": "CS305", "credits": 3, "gradeStatus": "pending" }
+  ],
+  "students": [],
+  "enrollments": []
+}
